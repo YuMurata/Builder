@@ -1,15 +1,15 @@
 #pragma once
 
 #include<vector>
-#include<memory>
 
-// vector<unique_ptr<Base>>‚ğ•Ô‹p‚·‚é
-template <class BaseType, class... Args>
-std::vector<std::unique_ptr<BaseType>> VUInitialize(Args&&... args)
+//vector<Containts>‚ğ•Ô‚·
+//unique_ptr‚ğˆø”‚É‚·‚é‚±‚Æ‚à‰Â”\
+template <class Containts, class... Args>
+std::vector<Containts> MakeVector(Args&&... args)
 {
 	using namespace std;
-	unique_ptr<BaseType> init[]{ forward<Args>(args)... };
-	vector<unique_ptr<BaseType>> ret{ make_move_iterator(begin(init)), make_move_iterator(end(init)) };
+	Containts init[]{ forward<Args>(args)... };
+	vector<Containts> ret{ make_move_iterator(begin(init)), make_move_iterator(end(init)) };
 
 	return ret;
 }

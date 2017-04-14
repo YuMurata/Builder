@@ -7,6 +7,8 @@
 #include<vector>
 #include<conio.h>
 #include<initializer_list>
+#include<utility>
+
 #include"VUInitialize.h"
 using namespace std;
 
@@ -35,12 +37,15 @@ int main()
 		void Disp() { cout << y << endl; }
 	};
 
-	auto temp = { make_unique<Base>(),make_unique<Base>() };
-	vector<unique_ptr<Base>> MyClass = VUInitialize<Base>(make_unique<X>(),make_unique<Y>());
+	auto MyClass = VUInitialize<pair<int,unique_ptr<Base>>>
+		(
+			make_pair(1,make_unique<X>()),
+			make_pair(1,make_unique<Y>())
+			);
 	//move(begin(temp), end(temp), back_inserter(MyClass));
 	for (auto &i : MyClass)
 	{
-		i->Disp();
+		i.second->Disp();
 	}
 
 	_getch();
