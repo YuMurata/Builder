@@ -161,7 +161,7 @@
     <ClInclude Include="Builder.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
-    <ClInclude Include="VUInitialize.h" />
+    <ClInclude Include="MakeVector.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp" />

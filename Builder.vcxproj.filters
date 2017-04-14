@@ -33,7 +33,7 @@
     <ClInclude Include="..\..\Include\Builder.h">
       <Filter>include</Filter>
     </ClInclude>
-    <ClInclude Include="VUInitialize.h">
+    <ClInclude Include="MakeVector.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
   </ItemGroup>
